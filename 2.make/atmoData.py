@@ -24,7 +24,7 @@ import pandas as pd
 
 # 1. Upload raw data (csv) in `1.upload/atmoData`
 # 2. Open a terminal in VS Code (Ctrl+Shift+`)
-# 3. Set working directory to `cd parserTools`
+# 3. Set working directory to current directory `cd .`
 # 4. Test run this script in terminal as `python 2.make/atmoData.py example_ext.csv`
 # 5. Run it with your actual csv.
 
