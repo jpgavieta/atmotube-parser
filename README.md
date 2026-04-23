@@ -8,7 +8,15 @@ Features:
 
 ## How to use
 1. Upload raw CSV file to 1.upload
-2. Run the .py script in 2.make
-3. Save the parsed CSV to 3.save
+2. Install dependencies:
+```bash
+pip install pandas tzfpy
+```
+or 
+```bash
+conda install -c conda-forge pandas tzfpy
+```
+4. Follow intructions in the 2.make 
+5. Save the parsed CSV to 3.save
 
 Example data taken from [https://support.atmotube.com/en/articles/13002682-history-mode-overview](https://support.atmotube.com/en/articles/13002682-history-mode-overview)
