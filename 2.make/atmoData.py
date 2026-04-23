@@ -22,7 +22,7 @@ import pandas as pd
 
 # ======================== HOW TO USE ========================
 
-# 1. Upload raw data (csv) in `parserTools/1.upload/atmoData`
+# 1. Upload raw data (csv) in `1.upload/atmoData`
 # 2. Open a terminal in VS Code (Ctrl+Shift+`)
 # 3. Set working directory to `cd parserTools`
 # 4. Test run this script in terminal as `python 2.make/atmoData.py example_ext.csv`
@@ -32,9 +32,9 @@ import pandas as pd
 
 ### Grab uploaded raw data from 1.upload/atmoData
 
-base_dir = Path(__file__).parent.parent # Ensures working in parserTools
+base_dir = Path(__file__).parent.parent # where all the upload,make, and save folders exist
 
-os.chdir(base_dir / "1.upload/atmoData") # Move to parserTools/1.upload/atmoData
+os.chdir(base_dir / "1.upload/atmoData") # Move to 1.upload/atmoData
 print("Upload directory:", os.getcwd())
 
 if len(sys.argv) < 2:
@@ -45,7 +45,7 @@ if len(sys.argv) < 2:
 csv_path = sys.argv[1] # Get csv path from command line, relative to 1.upload/atmoData
 df = pd.read_csv(csv_path)
 
-os.chdir(base_dir / "2.make") # Back to parserTools/2.make
+os.chdir(base_dir / "2.make") # Back to 2.make
 print("Make directory:", os.getcwd())
 
 import dataParser.parse_utils as parse_utils # Imports custom utilities!
@@ -60,7 +60,7 @@ df = parse_utils.rename_col_hard_include(df,
                                 ["lon"], "lon",
                                 ["date"], "datetime"
                                 );
-df['datetime'] = pd.to_datetime(df['datetime'], utc=True) # Standardize datetime (UTC format)
+df['datetime'] = pd.to_datetime(df['datetime'], utc=True) 
 df = parse_utils.add_time_zoneandlocal(df, datetime_col='datetime', lon_col='lon', lat_col='lat') # datetime = Index key to merge all dfs at the end
 time_df = parse_utils.get_col_soft_inandexclude(df, ["datetime", "timezone", "date", "time"]) 
     # datetime are in ISO 8601 date and time format, the 00+00:00 is in UTC format (for how much hours is offset)
