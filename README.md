@@ -16,7 +16,13 @@ or
 ```bash
 conda install -c conda-forge pandas tzfpy
 ```
-4. Follow intructions in the 2.make 
-5. Save the parsed CSV to 3.save
+4. Follow intructions in the 2.make
+```
+# Open a terminal in VS Code (Ctrl+Shift+`)
+# Set working directory to current directory `cd .`
+# Test run this script as `python 2.make/atmoData.py example_ext.csv`
+# Run it with your actual csv.
+```
+6. Automatically saves the parsed CSV to 3.save
 
 Example data taken from [https://support.atmotube.com/en/articles/13002682-history-mode-overview](https://support.atmotube.com/en/articles/13002682-history-mode-overview)
